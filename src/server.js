@@ -46,4 +46,6 @@ const server = http.createServer((request, response) => {
   return send(response, 404, 'Not Found');
 });
 
-server.listen(process.argv[2] || 3000);
+// server.listen(process.argv[2] || 3000);
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => console.log(`Listening on ${PORT}`));
